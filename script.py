@@ -1,10 +1,16 @@
-from dagster import execute_job
-from dagster_demo_2 import data_pipeline
+
+from dagster import repository
+from dagster_demo_2 import process_data_job
 from dagster_demo import my_first_job
 
-if __name__ == "__main__":
+@repository
+def my_repo():
+    return [process_data_job, my_first_job]
 
-    result1 = execute_job(data_pipeline)
+
+'''if __name__ == "__main__":
+
+    result1 = execute_job(process_data)
     if result1.success:
         print("Job succeeded!")
     else:
@@ -14,4 +20,4 @@ if __name__ == "__main__":
     if result2.success:
         print("Job succeeded!")
     else:
-        print("Job failed!")
+        print("Job failed!")'''

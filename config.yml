@@ -1,0 +1,7 @@
+ops:
+  read_csv:
+    config:
+      input_file_path: "data/co2_emissions.csv"
+  write_csv:
+    config:
+      output_file_path: "output/output_file.csv"
